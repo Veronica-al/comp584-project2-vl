@@ -31,6 +31,14 @@ div img {
 }
 
 /* grid system -- mobile first! */
+
+@media only screen and (max-width: 479px) {
+
+  .row-3 .col-3 {
+    order: -1;
+  }
+}
+
 /* flex contatiner */
 
 .row {
@@ -48,36 +56,62 @@ div img {
 /* Add background colors to see how much space each column is taking */
 
 .col-1 {
-	background-color: #A3CDD9;
+	background-color: #6adfff;
 }
 
 .col-2 {
-	background-color: #FFFCE6;
+	background-color: #ffa1e3;
 }
 
 .col-3 {
-	background-color: #e3d002;
+	background-color: #fff476;
 }
 
 .col-4 {
-	background-color: #947a58;
+	background-color: #007430;
 }
 
-/* Tablet Landscape Screen Sizes */
-@media only screen and (min-width: 480px)  {
-	
+/* Tablet: basic 2-column behavior for col-1 & col-2 */
+@media only screen and (min-width: 479px) and (max-width: 1024px){
   .col-1,
   .col-2 {
-		flex: 0 0 44%;
-	}
-  
-  
+    flex: 0 0 44%;
+  }
 
+  /* row 3: both items full width */
+  .row-3 .col-1,
+  .row-3 .col-3 {
+    flex: 0 0 92%;
+  }
 
+  /* row 4: full width */
+  .row-4 .col-4 {
+    flex: 0 0 92%;
+  }
 
+  /* row 5: tablet layout
+     to have it ordered
+  */
+  .row-5 .col-1 {
+    flex: 0 0 44%;
+  }
+  .row-5 .col-2 {
+    flex: 0 0 92%;
+    order: -1; 
+  }
+
+  .row-6 .col-1{
+    flex: 0 0 92%;
+  }
+
+  .row-6 .col-3{
+    flex: 0 0 92%;
+  }
 }
+
+
 /* Desktop screen Sizes */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   
   
  	.col-1 {
